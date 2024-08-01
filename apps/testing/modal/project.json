@@ -4,6 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/testing/modal/src",
   "prefix": "app",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -56,10 +57,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "testing-modal:build:production"
+          "buildTarget": "testing-modal:build:production"
         },
         "development": {
-          "browserTarget": "testing-modal:build:development"
+          "buildTarget": "testing-modal:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,31 +68,17 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "testing-modal:build"
+        "buildTarget": "testing-modal:build"
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "apps/testing/modal/**/*.ts",
-          "apps/testing/modal/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/testing/modal/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "apps/testing/modal/jest.config.ts"
       }
     },
     "component-test": {
@@ -103,6 +90,5 @@
         "devServerTarget": "testing-modal:build"
       }
     }
-  },
-  "tags": []
+  }
 }

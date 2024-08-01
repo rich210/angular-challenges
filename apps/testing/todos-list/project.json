@@ -4,6 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/testing/todos-list/src",
   "prefix": "app",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -56,10 +57,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "testing-todos-list:build:production"
+          "buildTarget": "testing-todos-list:build:production"
         },
         "development": {
-          "browserTarget": "testing-todos-list:build:development"
+          "buildTarget": "testing-todos-list:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,31 +68,17 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "testing-todos-list:build"
+        "buildTarget": "testing-todos-list:build"
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "apps/testing/todos-list/**/*.ts",
-          "apps/testing/todos-list/**/*.html"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/testing/todos-list/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "apps/testing/todos-list/jest.config.ts"
       }
     },
     "component-test": {
@@ -103,6 +90,5 @@
         "devServerTarget": "testing-todos-list:build"
       }
     }
-  },
-  "tags": []
+  }
 }

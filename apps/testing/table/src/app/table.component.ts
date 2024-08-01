@@ -9,7 +9,9 @@ import { MatSort, MatSortModule, SortDirection } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { User } from '@ngneat/falso';
 import { LetDirective } from '@ngrx/component';
-import { ComponentStore, tapResponse } from '@ngrx/component-store';
+import { ComponentStore } from '@ngrx/component-store';
+import { tapResponse } from '@ngrx/operators';
+
 import { map, pipe, startWith, switchMap, tap } from 'rxjs';
 
 interface TableState {
