@@ -1,0 +1,5 @@
+<div>
+    {{ todo().title }}
+    <button [disabled]=" isLoading" (click)="onUpdate(todo())">Update</button>
+    <button [disabled]="isLoading" (click)="onDelete(todo())">Delete</button>
+</div>

@@ -1,6 +1,15 @@
 import { ApplicationConfig } from '@angular/core';
-import { enableProdMode, importProvidersFrom } from '@angular/core';
-import {} from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from '@angular/common/http';
+import { errorHandlerrInterceptor } from './interceptors/error-handlerr.interceptor';
 export const appConfig: ApplicationConfig = {
-  providers: [importProvidersFrom(HttpClientModule)],
+  providers: [
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([errorHandlerrInterceptor])
+    ),
+  ],
 };
