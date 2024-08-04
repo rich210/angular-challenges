@@ -77,7 +77,7 @@
       "standalone": "true"
     }
   },
-  "defaultProject": "angular-projection",
+  "defaultProject": "angular-crud",
   "nxCloudAccessToken": "MjYyNjdlNjItOTkwYS00ZjNkLTgzNmUtZDI2NTM2MzdiN2JhfHJlYWQtd3JpdGU=",
   "useInferencePlugins": false
 }
