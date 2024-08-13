@@ -1,6 +1,7 @@
 import { TOKEN } from '@angular-challenges/module-to-standalone/core/providers';
 import { AuthorizationService } from '@angular-challenges/module-to-standalone/core/service';
 import { Component, Inject } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'lib-home',
@@ -18,6 +19,8 @@ import { Component, Inject } from '@angular/core';
     </section>
 
     <section>LoadedToken {{ token }}</section> `,
+  standalone: true,
+  imports: [AsyncPipe],
 })
 export class HomeComponent {
   constructor(

@@ -1,5 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'lib-create-user',
@@ -10,13 +10,15 @@ import { RouterModule } from '@angular/router';
       class="border bg-gray-700 rounded-lg p-2 text-white ml-5">
       Back
     </button> `,
+  standalone: true,
+  imports: [RouterLink],
 })
 export class CreateUserComponent {}
 
 @NgModule({
   imports: [
     RouterModule.forChild([{ path: '', component: CreateUserComponent }]),
+    CreateUserComponent,
   ],
-  declarations: [CreateUserComponent],
 })
 export class CreateUserModule {}

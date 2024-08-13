@@ -43,9 +43,3 @@ export const NgForTrackByDirective: Provider[] = [
   NgForTrackByIdDirective,
   NgForTrackByPropDirective,
 ];
-
-@NgModule({
-  imports: [NgFor, NgForTrackByDirective],
-  exports: [NgFor, NgForTrackByDirective],
-})
-export class NgForTrackByModule {}
